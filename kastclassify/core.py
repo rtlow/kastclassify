@@ -1012,7 +1012,7 @@ def calc_spec_info(filepath, plot=False, no_index_trials=100, no_EW_trials=30, d
     print('Measuring indices...')
     indices = {}
     
-    for ref in list(kastclassify_index_dict):
+    for ref in list(kastclassify.defs.index_dict):
         
         print('Mesuring index set {}...'.format(ref))
         
