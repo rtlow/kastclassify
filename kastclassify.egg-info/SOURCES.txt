@@ -1,0 +1,10 @@
+README.md
+setup.py
+kastclassify/__init__.py
+kastclassify/core.py
+kastclassify/defs.py
+kastclassify.egg-info/PKG-INFO
+kastclassify.egg-info/SOURCES.txt
+kastclassify.egg-info/dependency_links.txt
+kastclassify.egg-info/not-zip-safe
+kastclassify.egg-info/top_level.txt
