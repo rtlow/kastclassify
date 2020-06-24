@@ -43,6 +43,7 @@ import specutils.fitting
 
 from splat.utilities import typeToNum
 
+import kastclassify.defs
 
 ####################################################
 ### END IMPORTS ####################################
@@ -952,7 +953,7 @@ def calculate_L_Lbol(Halpha_EW, Halpha_EW_err, spt):
     
     chi_interp = interp1d(kastclassify.defs.chi_factor_types, kastclassify.defs.chi_factor_values, bounds_error=False, fill_value=np.nan)
 
-    chi_err_interp = interp1d(kastclssify.defs.chi_factor_types, kastclassify.defs.chi_factor_values_err, bounds_error=False, fill_value=np.nan)
+    chi_err_interp = interp1d(kastclassify.defs.chi_factor_types, kastclassify.defs.chi_factor_values_err, bounds_error=False, fill_value=np.nan)
     
     stype = typeToNum(spt)
     
@@ -1025,7 +1026,7 @@ def calc_spec_info(filepath, plot=False, no_index_trials=100, no_EW_trials=30, d
     print('Measuring Equivalent Widths...')
     EWs = {}
     
-    for ref in list(kastclassify_EW_dict):
+    for ref in list(kastclassify.defs.EW_dict):
         
         print('Measuring EW for {}...'.format(ref))
         
