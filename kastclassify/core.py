@@ -77,7 +77,7 @@ def spt_from_name(name):
     
     return spt
 
-def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None):
+def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None, file=None):
     
     lepine_str = 'lepine'
     kirkpatrick_str = 'kirkpatrick'
@@ -148,6 +148,10 @@ def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None):
         if diag_path is not None:
             
             plt.savefig(diag_path + spec.name + '_standardComparison.png' )
+            
+        
+        if isinstance(file, str):
+            plt.savefig(file + '.png')
         
         if plot:
             plt.show()
