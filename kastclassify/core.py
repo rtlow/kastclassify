@@ -1058,6 +1058,7 @@ def calc_spec_info(filepath, plot=False, no_index_trials=100, no_EW_trials=30, d
     
     results['name'] = spec.name
     results['filename'] = filename
+    results['tags'] = 'NULL'
     results['RA'] = ra
     results['DEC'] = dec
     results['OBSDATE'] = date
