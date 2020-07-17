@@ -77,7 +77,7 @@ def spt_from_name(name):
     
     return spt
 
-def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None, file=None):
+def classify_by_standard(spec, ref='all', plot=False, diag_path=None, file=None):
     
     lepine_str = 'lepine'
     kirkpatrick_str = 'kirkpatrick'
@@ -133,7 +133,7 @@ def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None, file=No
         
     for stand in COMPARISON:
         
-        chi2, scalefactor = kastredux.compareSpectra_simple(spec, stand)
+        chi2, scalefactor = kastredux.compareSpectra_simple(spec, stand, fit_range=[6000,9000])
 
         
         if chi2 < minimal:
@@ -143,7 +143,7 @@ def classify_by_standard(spec, ref='lepine', plot=False, diag_path=None, file=No
             minimal_standard_name = stand.name
             
     if plot or (diag_path is not None):
-        placeholder = kastredux.compareSpectra_simple(spec, minimal_standard, plot=True)
+        placeholder = kastredux.compareSpectra_simple(spec, minimal_standard, plot=True, fit_range=[6000,9000])
         
         if diag_path is not None:
             
