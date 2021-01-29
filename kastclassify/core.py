@@ -83,6 +83,7 @@ def classify_by_standard(spec, ref='all', plot=False, diag_path=None, file=None)
     kirkpatrick_str = 'kirkpatrick'
     burgasser_str = 'burgasser'
     sdss_str = 'SDSS'
+    kess_str = 'kesseli'
     all_str = 'all'
     
     STANDARD_SPECTRA = []
@@ -90,6 +91,7 @@ def classify_by_standard(spec, ref='all', plot=False, diag_path=None, file=None)
     KIRKPATRICK_STANDARDS = []
     BURGASSER_STANDARDS = []
     SDSS_STANDARDS = []
+    KESS_STANDARDS= []
     
     STANDARD_PATHS = glob.glob(kastredux.SPTSTDFOLDER + '*.txt')
 
@@ -109,6 +111,8 @@ def classify_by_standard(spec, ref='all', plot=False, diag_path=None, file=None)
             BURGASSER_STANDARDS.append(stand_spec)
         elif sdss_str in name:
             SDSS_STANDARDS.append(stand_spec)
+        elif kess_str in name:
+            KESS_STANDARDS.append(stand_spec)
             
 
 
@@ -128,6 +132,8 @@ def classify_by_standard(spec, ref='all', plot=False, diag_path=None, file=None)
         COMPARISON = BURGASSER_STANDARDS
     elif ref in sdss_str:
         COMPARISON = SDSS_STANDARDS
+    elif ref in kess_str:
+        COMPARISON = KESS_STANDARDS
     else:
         COMPARISON = STANDARD_SPECTRA
         
